@@ -4,8 +4,8 @@ function Card() {
 	return (
 		<div className="card">
 			<span>Tomorrow</span>
-			<span>🌦️</span>
-			<span>18C 11C</span>
+			<p>🌦️</p>
+			<span>18 °C</span>
 		</div>
 	);
 }

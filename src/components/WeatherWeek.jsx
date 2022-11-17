@@ -9,7 +9,6 @@ function WeatherWeek() {
 			<Card />
 			<Card />
 			<Card />
-			<Card />
 		</div>
 	);
 }
