@@ -1,50 +1,41 @@
 const weatherData = [
 	{
-		coord: {
-			lon: -79.2735,
-			lat: 43.7378,
+		latitude: 52.52,
+		longitude: 13.419998,
+		generationtime_ms: 0.5910396575927734,
+		utc_offset_seconds: 0,
+		timezone: 'GMT',
+		timezone_abbreviation: 'GMT',
+		elevation: 38.0,
+		current_weather: {
+			temperature: 39,
+			windspeed: 10.5,
+			winddirection: 88.0,
+			weathercode: 3,
+			time: '2022-11-17T00:00',
 		},
-		weather: [
-			{
-				id: 501,
-				main: 'Rain',
-				description: 'moderate rain',
-				icon: '10n',
-			},
-		],
-		base: 'stations',
-		main: {
-			temp: 272.85,
-			feels_like: 267.23,
-			temp_min: 270.52,
-			temp_max: 275.5,
-			pressure: 1020,
-			humidity: 87,
+		daily_units: {
+			time: 'iso8601',
+			weathercode: 'wmo code',
+			temperature_2m_max: '°F',
+			temperature_2m_min: '°F',
+			windspeed_10m_max: 'mp/h',
 		},
-		visibility: 10000,
-		wind: {
-			speed: 6.17,
-			deg: 100,
-			gust: 10.8,
+		daily: {
+			time: [
+				'2022-11-17',
+				'2022-11-18',
+				'2022-11-19',
+				'2022-11-20',
+				'2022-11-21',
+				'2022-11-22',
+				'2022-11-23',
+			],
+			weathercode: [61, 61, 2, 71, 71, 2, 1],
+			temperature_2m_max: [42.6, 36.9, 31.8, 32.9, 33.7, 29.1, 29.1],
+			temperature_2m_min: [37.4, 28.7, 25.7, 25.9, 24.6, 22.9, 20.3],
+			windspeed_10m_max: [16.1, 11.2, 6.2, 4.0, 6.5, 7.6, 2.9],
 		},
-		rain: {
-			'1h': 1.33,
-		},
-		clouds: {
-			all: 100,
-		},
-		dt: 1668567407,
-		sys: {
-			type: 2,
-			id: 2009209,
-			country: 'CA',
-			sunrise: 1668514291,
-			sunset: 1668549127,
-		},
-		timezone: -18000,
-		id: 6141899,
-		name: 'Scarborough Junction',
-		cod: 200,
 	},
 ];
 

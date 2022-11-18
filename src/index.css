@@ -77,7 +77,8 @@ aside .current span {
 }
 
 aside .current h1 {
-	font-size: 5rem;
+	font-weight: 700;
+	font-size: 4rem;
 }
 
 aside .current .day {
@@ -120,10 +121,36 @@ main {
 	height: 150px;
 	background-color: var(--secondaryColor);
 	font-weight: 500;
+	border-radius: 0.25rem;
 }
 
 .card p {
-	font-size: 2rem;
+	font-size: 1.2rem;
+}
+
+/* Highlight */
+.highlight {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background-color: var(--secondaryColor);
+	height: 100%;
+	width: 100%;
+	padding: 1rem;
+	border-radius: 0.25rem;
+}
+
+.highlight p {
+	font-weight: 700;
+	color: var(--grey);
+	font-size: 1rem;
+}
+
+.highlight h3 {
+	margin: auto;
+	font-size: 4rem;
 }
 
 /* Weather Today */
