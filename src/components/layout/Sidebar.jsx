@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import weatherData from '../../data/WeatherData';
+import React, { useContext } from 'react';
+import WeatherContext from '../../context/WeatherContext';
 
 function Sidebar() {
-	const [weather, setWeather] = useState(weatherData);
-	// !!! TODO Fix State
-	const today = new Date(weather[0].current_weather.time);
-	const todayDate = today
-		.toDateString()
-		.substring(0, today.toDateString().length - 5);
+	const { todayWeather, getDaily } = useContext(WeatherContext);
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		getDaily();
+	};
+
 	return (
 		<aside>
-			<form>
+			<form onSubmit={handleSubmit}>
 				<input
 					type="text"
 					name="location"
@@ -21,10 +21,13 @@ function Sidebar() {
 			</form>
 			<div className="current">
 				<span>⛅</span>
-				<h1>{weather[0].current_weather.temperature} C</h1>
+				<h1>
+					{/* {todayWeather.main.temp} */}
+					Hello
+				</h1>
 				<p className="day">Sunny</p>
 				<div>
-					<p>Today . {todayDate}</p>
+					<p>Today {Date(todayWeather.dt)}</p>
 					<p>🌈Toronto</p>
 				</div>
 			</div>

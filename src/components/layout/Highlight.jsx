@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Highlight({ weatherInfo, title }) {
 	return (
@@ -8,5 +9,10 @@ function Highlight({ weatherInfo, title }) {
 		</div>
 	);
 }
+
+Highlight.propTypes = {
+	weatherInfo: PropTypes.number,
+	title: PropTypes.string,
+};
 
 export default Highlight;

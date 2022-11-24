@@ -1,30 +1,17 @@
 import React, { useState } from 'react';
-import Card from './layout/Card';
-import weatherData from '../data/WeatherData';
+import currentData from '../data/currentData';
 import Highlight from './layout/Highlight';
 
 function WeatherToday() {
-	const [weather, setWeather] = useState(weatherData);
+	const [weather, setWeather] = useState(currentData);
 	return (
 		<div className="weather-today">
 			<h2>Today's Highlights</h2>
 			<div className="grid">
-				<Highlight
-					weatherInfo={weather[0].current_weather.windspeed}
-					title="Wind Status"
-				/>
-				<Highlight
-					weatherInfo={weather[0].current_weather.temperature}
-					title="Temperature"
-				/>
-				<Highlight
-					weatherInfo={weather[0].current_weather.temperature}
-					title="Temperature"
-				/>
-				<Highlight
-					weatherInfo={weather[0].current_weather.temperature}
-					title="Temperature"
-				/>
+				<Highlight weatherInfo={weather.wind.speed} title="Wind Status" />
+				<Highlight weatherInfo={weather.main.temp} title="Temperature" />
+				<Highlight weatherInfo={weather.main.pressure} title="Pressure" />
+				<Highlight weatherInfo={weather.main.humidity} title="Humidity" />
 			</div>
 		</div>
 	);

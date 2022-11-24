@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function Card({ code }) {
 	// WMO Weather interpretation codes (WW)
@@ -14,10 +15,6 @@ function Card({ code }) {
 	// 77 	Snow grains
 	// 80, 81, 82 	Rain showers: Slight, moderate, and violent
 	// 85, 86 	Snow showers slight and heavy
-	const weatherCode = useState([
-		0, 1, 2, 3, 45, 48, 51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 71, 73, 75, 77,
-		80, 81, 82, 85, 86,
-	]);
 
 	// !!TODO Clean up function
 	const weatherInterp = (code) => {
@@ -26,7 +23,7 @@ function Card({ code }) {
 			case 1:
 			case 2:
 			case 3:
-				return handleCodeOne(code);
+				handleCodeOne(code);
 				break;
 			case 45:
 			case 48:
@@ -153,6 +150,7 @@ function Card({ code }) {
 				return 'No info';
 		}
 	};
+
 	return (
 		<div className="card">
 			<span>Tomorrow</span>
@@ -162,5 +160,9 @@ function Card({ code }) {
 		</div>
 	);
 }
+
+Card.propTypes = {
+	code: PropTypes.number,
+};
 
 export default Card;
