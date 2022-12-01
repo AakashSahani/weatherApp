@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 import WeatherContext from '../../context/WeatherContext';
 
 function Sidebar() {
-	const { todayWeather, getDaily } = useContext(WeatherContext);
+	const { todayWeather } = useContext(WeatherContext);
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		getDaily();
+		console.log('get daily weather');
 	};
 
 	return (

@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Card from './layout/Card';
+import WeatherContext from '../context/WeatherContext';
 
 function WeatherWeek() {
+	const { weather, getDailyWeather } = useContext(WeatherContext);
+	useEffect(() => {
+		getDailyWeather();
+	}, []);
+
 	return (
 		<div className="weather-week">
-			<Card code={1} />
-			<Card code={2} />
-			<Card code={0} />
-			<Card code={3} />
-			<Card code={2} />
+			{weather[0].daily.time.map((day, index) => (
+				<Card
+					key={index}
+					code={weather[0].daily.weathercode[index]}
+					time={day}
+				/>
+			))}
 		</div>
 	);
 }

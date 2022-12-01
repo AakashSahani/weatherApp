@@ -125,6 +125,7 @@ main {
 	background-color: var(--secondaryColor);
 	font-weight: 500;
 	border-radius: 0.25rem;
+	margin: 0 0.25rem;
 }
 
 .card p {

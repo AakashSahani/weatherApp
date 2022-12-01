@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Card({ code }) {
+function Card({ code, time }) {
 	// WMO Weather interpretation codes (WW)
 	// Code 	Description
 	// 0 	Clear sky
@@ -23,39 +23,39 @@ function Card({ code }) {
 			case 1:
 			case 2:
 			case 3:
-				handleCodeOne(code);
-				break;
+				return handleCodeOne(code);
+			// break;
 			case 45:
 			case 48:
-				handleCodeFour(code);
-				break;
+				return handleCodeFour(code);
+			// break;
 			case 51:
 			case 53:
 			case 55:
 			case 56:
 			case 57:
-				handleCodeFive(code);
-				break;
+				return handleCodeFive(code);
+			// break;
 			case 61:
 			case 63:
 			case 65:
 			case 66:
 			case 67:
-				handleCodeSix(code);
-				break;
+				return handleCodeSix(code);
+			// break;
 			case 71:
 			case 73:
 			case 75:
 			case 77:
-				handleCodeSeven(code);
-				break;
+				return handleCodeSeven(code);
+			// break;
 			case 80:
 			case 81:
 			case 82:
 			case 85:
 			case 86:
-				handleCodeEight(code);
-				break;
+				return handleCodeEight(code);
+			// break;
 			default:
 				return 'No Info';
 		}
@@ -78,14 +78,10 @@ function Card({ code }) {
 
 	const handleCodeFour = (code) => {
 		switch (code) {
-			case 0:
+			case 45:
 				return 'Clear sky';
-			case 1:
+			case 48:
 				return 'Mainly clear';
-			case 2:
-				return 'partly cloudy';
-			case 3:
-				return 'overcast';
 			default:
 				return 'No info';
 		}
@@ -93,13 +89,15 @@ function Card({ code }) {
 
 	const handleCodeFive = (code) => {
 		switch (code) {
-			case 0:
+			case 51:
 				return 'Clear sky';
-			case 1:
+			case 53:
 				return 'Mainly clear';
-			case 2:
+			case 55:
 				return 'partly cloudy';
-			case 3:
+			case 56:
+				return 'overcast';
+			case 57:
 				return 'overcast';
 			default:
 				return 'No info';
@@ -108,13 +106,15 @@ function Card({ code }) {
 
 	const handleCodeSix = (code) => {
 		switch (code) {
-			case 0:
+			case 61:
 				return 'Clear sky';
-			case 1:
+			case 63:
 				return 'Mainly clear';
-			case 2:
+			case 65:
 				return 'partly cloudy';
-			case 3:
+			case 66:
+				return 'overcast';
+			case 67:
 				return 'overcast';
 			default:
 				return 'No info';
@@ -123,13 +123,13 @@ function Card({ code }) {
 
 	const handleCodeSeven = (code) => {
 		switch (code) {
-			case 0:
+			case 71:
 				return 'Clear sky';
-			case 1:
+			case 73:
 				return 'Mainly clear';
-			case 2:
+			case 75:
 				return 'partly cloudy';
-			case 3:
+			case 77:
 				return 'overcast';
 			default:
 				return 'No info';
@@ -138,13 +138,15 @@ function Card({ code }) {
 
 	const handleCodeEight = (code) => {
 		switch (code) {
-			case 0:
+			case 80:
 				return '☀️';
-			case 1:
+			case 81:
 				return '🌤️';
-			case 2:
+			case 82:
 				return '⛅';
-			case 3:
+			case 85:
+				return '☁️';
+			case 86:
 				return '☁️';
 			default:
 				return 'No info';
@@ -153,7 +155,7 @@ function Card({ code }) {
 
 	return (
 		<div className="card">
-			<span>Tomorrow</span>
+			<span>{time}</span>
 			{/* <p>🌦️</p> */}
 			<p className="interp">{weatherInterp(code)}</p>
 			<span>18 °C</span>
@@ -163,6 +165,7 @@ function Card({ code }) {
 
 Card.propTypes = {
 	code: PropTypes.number,
+	time: PropTypes.string,
 };
 
 export default Card;

@@ -15,16 +15,6 @@ export const WeatherProvider = ({ children }) => {
 		positionOptions: { enableHighAccuracy: false },
 		userDecisionTimeout: 5000,
 	});
-
-	const getDaily = async () => {
-		await fetch(
-			`https://api.openweathermap.org/data/2.5/weather?units=metric&lat=43.73592388960052&lon=-79.27396187008394&appid=${
-				import.meta.env.VITE_WEATHERAPIKEY
-			}`
-		)
-			.then((res) => res.json())
-			.then((data) => console.log(data));
-	};
 	const getDailyWeather = async () => {
 		if (coords != undefined) {
 			await fetch(
@@ -34,7 +24,6 @@ export const WeatherProvider = ({ children }) => {
 				.then((data) => {
 					console.log(data);
 					setWeather(data);
-					// setTodayWeather([data]);
 				});
 		} else {
 			console.log('Fetching Data...');
@@ -45,7 +34,6 @@ export const WeatherProvider = ({ children }) => {
 		<WeatherContext.Provider
 			value={{
 				coords,
-				getDaily,
 				getDailyWeather,
 				weather,
 				todayWeather,
