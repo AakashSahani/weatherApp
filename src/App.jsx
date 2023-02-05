@@ -1,16 +1,12 @@
 import React from 'react';
-import Weather from './components/Weather';
-import { WeatherProvider } from './context/WeatherContext';
-import Sidebar from './components/layout/Sidebar';
+import WeatherForm from './components/WeatherForm/WeatherForm';
 
 function App() {
 	return (
-		<WeatherProvider>
-			<div className="app">
-				<Sidebar />
-				<Weather />
-			</div>
-		</WeatherProvider>
+		<>
+			<WeatherForm />
+			<div className="app">Hello world</div>
+		</>
 	);
 }
 
